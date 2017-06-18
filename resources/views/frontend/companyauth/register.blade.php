@@ -295,5 +295,8 @@
     </section>
 @endsection
 @section('after-scripts-end')
-    <script src="/assets/app/register.company.js"></script>
+    <script>
+        var sitURL = "<?php echo url('/'); ?>" ;
+    </script>
+    <script src="{{url('/assets/app/register.company.js')}}"></script>
 @stop

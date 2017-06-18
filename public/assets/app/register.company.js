@@ -27,10 +27,10 @@ $(function(){
 					});
 					postdata['_token'] = $('meta[name="csrf-token"]').attr('content'); 
 					$('body').removeClass('loaded');
-					$.post('/company/signup',postdata,function(response){   
+					$.post(sitURL+'/company/signup',postdata,function(response){   
 					$('body').addClass('loaded');
 						if(response.success)
-							location.href = "/company/signup";
+							location.href = sitURL+"/company/signup";
 						else 
 							{
 							if ((typeof  response.errors) == 'object') { 
