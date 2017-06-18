@@ -18,7 +18,7 @@ $(function(){
 							var postdata={};
 							postdata['_token'] = $('meta[name="csrf-token"]').attr('content'); 
 							$('body').removeClass('loaded');
-							$.post('/resume/permission/' + seekerid,postdata,function(response){   
+							$.post(sitURL+'/resume/permission/' + seekerid,postdata,function(response){   
 								if(response.success){
 									location.reload();
 								}else{
@@ -30,7 +30,7 @@ $(function(){
 		},
 		
 		downloaderesume: function(ths,callback) { 
-			$.get('/resume/downloade/' + seekerid,postdata,function(response){    
+			$.get(sitURL+'/resume/downloade/' + seekerid,postdata,function(response){    
 							location.href=response.url;
 			},'json');
 		},
@@ -46,7 +46,7 @@ $(function(){
 							var postdata={};
 							postdata['_token'] = $('meta[name="csrf-token"]').attr('content'); 
 							$('body').removeClass('loaded');
-							$.post('/resume/addfavorite/' + seekerid,postdata,function(response){    
+							$.post(sitURL+'/resume/addfavorite/' + seekerid,postdata,function(response){    
 							$('body').addClass('loaded');
 								if(response.success){
 									ths.closest('.col-md-6').html('<div class=" btn small-btn link-button highlight-button-magenta col-md-12" name="removefavarite"><h2>Remove favorite <i class="fa fa-long-arrow-right text-white" aria-hidden="true"></i></h2></div>')

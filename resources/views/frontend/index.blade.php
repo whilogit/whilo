@@ -1378,5 +1378,8 @@
 @endsection
 
 @section('after-scripts-end')
-   <script src="/assets/app/froentend.js"></script> 
+   <script>
+        var sitURL = "<?php echo url('/'); ?>" ;
+    </script>
+    <script src="{{url('/assets/app/froentend.js')}}"></script>
 @stop

@@ -7,7 +7,7 @@ $(function(){
 		paginationjoblist: function(page) { 
 			if(fetch){
 				$('body').removeClass('loaded');
-				$.get('/search/joblist/' + page,function(response){ $('body').addClass('loaded'); 
+				$.get(sitURL+'/search/joblist/' + page,function(response){ $('body').addClass('loaded'); 
 					if(response.success){
 						var display = "";
 						for(var i = 0; i<response.data.length; i++){
@@ -18,11 +18,11 @@ $(function(){
 									 '<img src="companylogo.get/'+ response.data[i].logoCategory + '/' + response.data[i].dirYear + '/' + response.data[i].dirMonth + '/' + response.data[i].logoName + '/' + response.data[i].crTime + '/s.'+ response.data[i].logExt +'" class="img-responsive" style="width:100%"  alt="'+ response.data[i].companyName +'">'+
                                                                             
                                    
-                                    '<a href="/jobdetails/'+ response.data[i].jobId +'/'+ response.data[i].jobTitle +'" class="btn btn-lg btn-square btn-light btn-block-bm btn-icon">See more</a>'+
+                                    '<a href="'sitURL+'/jobdetails/'+ response.data[i].jobId +'/'+ response.data[i].jobTitle +'" class="btn btn-lg btn-square btn-light btn-block-bm btn-icon">See more</a>'+
                                 '</div>'+
                                 '<div class="cell">'+
                                     '<div class="listing-body clearfix">'+
-                                        '<h3><a href="/jobdetails/'+ response.data[i].jobId +'/'+ response.data[i].jobTitle +'">'+ response.data[i].jobTitle +'</a></h3>'+
+                                        '<h3><a href="'sitURL+'/jobdetails/'+ response.data[i].jobId +'/'+ response.data[i].jobTitle +'">'+ response.data[i].jobTitle +'</a></h3>'+
                                        '<h4>'+ response.data[i].jobTitle +'</h4>'+ 
                                     '</div>'+
                                     '<div class="listing-footer">'+

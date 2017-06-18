@@ -21,8 +21,8 @@
                    
                     <li class=" mega-dropdown-fluid"><a href="{{ url('/talents') }}"><i class="fa fa-universal-access" aria-hidden="true"></i>  TALENTS</a></li>
                     <li class=" mega-dropdown-fluid"><a href="{{ url('/jobs') }}"><i class="fa fa-universal-access" aria-hidden="true"></i>  Jobs</a></li>
-					<li class=" mega-dropdown-fluid"><a href="{{ url('/')}}"><i class="fa fa-briefcase" aria-hidden="true"></i>  COMPANIES</a></li>
-					<li class=" mega-dropdown-fluid"><a href="{{ url('/') }}"><i class="fa fa-globe" aria-hidden="true"></i>  CONSULTANTS</a></li>
+					<li class=" mega-dropdown-fluid"><a href="{{ url('/companies')}}"><i class="fa fa-briefcase" aria-hidden="true"></i>  COMPANIES</a></li>
+					<li class=" mega-dropdown-fluid"><a href="{{ url('/consultants') }}"><i class="fa fa-globe" aria-hidden="true"></i>  CONSULTANTS</a></li>
 			
 <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-book" aria-hidden="true"></i>  COURSES <i class="fa fa-caret-down" aria-hidden="true"></i></a>
@@ -47,7 +47,7 @@
 		        </ul>
 				<ul class="nav navbar-nav navbar-right">
                    <?php if(isset($_SESSION['WHILLO']['STATUS'])){ ?>
-                   <li class=" mega-dropdown-fluid"><a href="{{ url('/myaccount')}}" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user" aria-hidden="true" ></i>  My Account</a>
+                   <li class=" mega-dropdown-fluid"><a href="{{ url('/myaccount')}}" ><i class="fa fa-user" aria-hidden="true" ></i>  My Account</a>
 
  <ul class="dropdown-menu">
                             <li><a data-toggle="modal" data-target="#changepassword"><i class="fa fa-user" aria-hidden="true"></i>  Change Password</a></li>

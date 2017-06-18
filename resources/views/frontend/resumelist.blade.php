@@ -29,7 +29,7 @@
                             </div>
               <div class="row">
                     <div class="col-md-12 text-center">
-                        <a href="{{ url('#')}}" class="btn btn-lg btn-dark form-control1" title="">
+                        <a href="#" class="btn btn-lg btn-dark form-control1" title="">
                             <span>SEARCH</span>
                         </a>
                     </div>
@@ -85,7 +85,9 @@
 @endsection
 
 @section('after-scripts-end')
-  
+   <script>
+        var sitURL = "<?php echo url('/'); ?>" ;
+    </script>
    <script src="{{ url('/assets/app/conpany.joblist.js')}}"></script>
   
 @stop

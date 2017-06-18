@@ -32,6 +32,8 @@ Route::get('jobs/keyword={keyword}/location={locations}', 'JobController@searchj
 
 Route::group(['middleware' => 'AuthResumelist'], function () {
 	Route::get('talents', 'ResumeController@index')->name('frontend.resumelist');
+	Route::get('companies', 'CompanyController@index')->name('frontend.company');
+	Route::get('consultants', 'ConsultantController@index')->name('frontend.consultant');
 	Route::get('talentdetails/{id}/{name}', 'ResumeController@talentdetails')->name('frontend.talentdetails');
 	Route::post('resume/permission/{id}', 'ResumeController@permission')->name('frontend.permission');
 	Route::post('resume/addfavorite/{id}', 'ResumeController@addfavorite')->name('frontend.addfavorite');
