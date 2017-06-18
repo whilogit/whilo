@@ -506,6 +506,6 @@ span.onclick = function() {
 
 @section('after-scripts-end')
   
-   <script src="/assets/app/resume.permession.js"></script>
+   <script src="{{ url('/assets/app/resume.permession.js')}}"></script>
   
 @stop
