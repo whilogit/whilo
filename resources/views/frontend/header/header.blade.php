@@ -47,7 +47,13 @@
 		        </ul>
 				<ul class="nav navbar-nav navbar-right">
                    <?php if(isset($_SESSION['WHILLO']['STATUS'])){ ?>
-                   <li class=" mega-dropdown-fluid"><a href="{{ url('/myaccount')}}"><i class="fa fa-user" aria-hidden="true"></i>  My Account</a></li>
+                   <li class=" mega-dropdown-fluid"><a href="{{ url('/myaccount')}}" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user" aria-hidden="true" ></i>  My Account</a>
+
+ <ul class="dropdown-menu">
+                            <li><a data-toggle="modal" data-target="#changepassword"><i class="fa fa-user" aria-hidden="true"></i>  Change Password</a></li>
+                          
+                         </ul>
+</li>
 					<li class=" mega-dropdown-fluid"><a href="{{ url('/logout')}}"><i class="fa fa-sign-out" aria-hidden="true"></i>  Logout</a></li>
                    <?php } else { ?>
                    <li class=" mega-dropdown-fluid"><a href="{{ url('/auth/signin')}}"><i class="fa fa-sign-in" aria-hidden="true"></i>  LOGIN</a></li>
@@ -60,5 +66,63 @@
         </div>
     </div>
 </header>        </div>
-
+<div class="modal fade" id="changepassword" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+      
+        <h4 class="modal-title" id="myModalLabel">Change your Password</h4>
+      </div>
+      <div class="modal-body">
+       <div class="wp-block default user-form"> 
+                            
+                            <div class="form-body">
+                                <form action="" id="frmLogin" class="sky-form">                                    
+                                    <fieldset>                  
+                                    
+                                        <section>
+                                            <div class="form-group">
+                                                <label class="label">Enter Current Password</label>
+                                                <label class="input">
+                                                    <i class="icon-append fa fa-lock" aria-hidden="true"></i>
+                                                    <input type="password" name="Password">
+                                                </label>
+                                            </div>     
+                                        </section> 
+                                        
+ <section>
+                                            <div class="form-group">
+                                                <label class="label">Enter New Password</label>
+                                                <label class="input">
+                                                    <i class="icon-append fa fa-lock" aria-hidden="true"></i>
+                                                    <input type="password" name="Password">
+                                                </label>
+                                            </div>     
+                                        </section> 
+                                        
+ <section>
+                                            <div class="form-group">
+                                                <label class="label">Confirm New Password</label>
+                                                <label class="input">
+                                                    <i class="icon-append fa fa-lock" aria-hidden="true"></i>
+                                                    <input type="password" name="Password">
+                                                </label>
+                                            </div>     
+                                        </section> 
+                                        
+                                        <section>
+                                            <button class="btn btn-base btn-icon btn-icon-right btn-sign-in pull-right" type="submit">
+                                                <span>Change Password</span>
+                                            </button>
+                                        </section>
+                                    </fieldset>  
+                                </form>    
+                            </div>
+                         
+                        </div>
+      </div>
+    
+    </div>
+  </div>
+</div
         

@@ -1,14 +1,20 @@
 <div class="wp-tabs">
     <ul class="nav nav-pills nav-justified">
             <li class="active"><a href="#tabprofiledetails" data-toggle="tab">Profile Details</a></li>
-            <li><a href="#personal" data-toggle="tab">Personal Details</a></li>
-            <li><a href="#educational" data-toggle="tab">Educational Details</a></li>
             <li><a href="#professional" data-toggle="tab">Professional Details</a></li>
+            <li><a href="#educational" data-toggle="tab">Educational Details</a></li>
+            <li><a href="#Applied" data-toggle="tab">Applied Jobs</a></li>
+      <li><a href="#Shortlisted" data-toggle="tab">Shortlisted Jobs</a></li>
             <li><a href="#documents" data-toggle="tab">Uploaded Documents</a></li>
    </ul>
    <div class="tab-content tab-content-inverse">
         <div class="tab-pane active" id="tabprofiledetails">
             <h4 class="col-md-4 pull-left">Profile Details</h4>
+<div class="col-md-3 pull-right"><a name="btnsearch" href="javascript:void(0)" class="btn btn-lg pull-right" title="">
+                            <span class="c-white">Edit</span>
+                        </a>
+
+</div>
             <table class="table table-orders table-bordered table-striped table-responsive no-margin">
     		<tbody>
             @foreach($data['profile'] as $profile)
@@ -24,10 +30,17 @@
       </tbody>
     </table>
    </div>
-   <div class="tab-pane" id="personal">
-            <h4 class="col-md-4 pull-left">Personal Details</h4>
+   <div class="tab-pane" id="professional">
+            <h4 class="col-md-4 pull-left">Professional Details</h4>
+<div class="col-md-3 pull-right"><a name="btnsearch" href="javascript:void(0)" class="btn btn-lg  pull-right" title="" style="margin-left:1%;">
+                            <span class="c-white">Edit</span>
+                        </a>
+<a name="btnsearch" href="javascript:void(0)" class="btn btn-lg  pull-right" title="">
+                            <span class="c-white">Add New</span>
+                        </a>
+</div>
             <table class="table table-orders table-bordered table-striped table-responsive no-margin">
-                <tbody>
+              <!--   <tbody>
                 @foreach($data['personal'] as $personal)
                  <tr><th>Date Of Birth</th>   <td>{{ $personal->dob }}</td></tr>
                     <tr>   <th>Passport</th> <td>{{ $personal->passport }}</td></tr>
@@ -39,12 +52,26 @@
                  <tr> <th>Owning a vehicle??</th><td>{{ $personal->vehicle == 1 ? "Yes" : "No" }}</td></tr>
                 @endforeach    
                 
-                  </tbody>
+                  </tbody> -->
+<thead><th>Company Name</th><th>Job Title</th><th>Designation</th><th>Experience(Years)</th></tr></thead>
+<tbody>
+<tr><td>Robosoft</td><td>Sernior.Engineer</td><td>2</td></tr>
+<tr><td>Robosoft</td><td>Sernior.Engineer</td><td>2</td></tr>
+<tr><td>Robosoft</td><td>Sernior.Engineer</td><td>2</td></tr>
+</tbody>
                 </table>
             </div>
    
     <div class="tab-pane" id="educational">
        <h4 class="col-md-4 pull-left">Educational Details</h4>
+<div class="col-md-3 pull-right"><a name="btnsearch" href="javascript:void(0)" class="btn btn-lg  pull-right" title="" style="margin-left:1%;">
+                            <span class="c-white">Edit</span>
+                        </a>
+<a name="btnsearch" href="javascript:void(0)" class="btn btn-lg  pull-right" title="">
+                            <span class="c-white">Add New</span>
+                        </a>
+</div>
+         
        <table class="table table-orders table-bordered table-striped table-responsive no-margin">
                 <tbody>
                     
@@ -73,30 +100,76 @@
     </div>
     
     
-    <div class="tab-pane" id="professional">
-                     <h4 class="col-md-4 pull-left">Proffessional Details</h4>
+    <div class="tab-pane" id="Applied">
+                     <h4 class="col-md-4 pull-left">Applied Jobs</h4>
                      
-                      <table class="table table-orders table-bordered table-striped table-responsive no-margin">
-                        <tbody>
-                        @foreach($data['professional'] as $professional)
-                         <tr><th>Industry Name</th>   <td>{{ $professional->industryName }}</td></tr>
-                            <tr><th>exprstatus</th> <td>{{ $professional->exprstatus == 1 ? "Fresher" : "Expirience" }}</td></tr>
-                        @endforeach    
-                        </tbody>
-                        </table>
-                    @if(count($data['expirience']) > 0)
-                     <table class="table table-orders table-bordered table-striped table-responsive no-margin">
-                            <tbody>
-                                <tr><th>Company Name</th><th>Description</th><th>StartYear</th><th>End Year</th></tr>
-                                @foreach($data['expirience'] as $expirience)
-                                <tr><td>{{ $expirience->companyName }}</td><td>{{ $expirience->description }}</td><td>{{ $expirience->startYear }}</td><td>{{ $expirience->endYear }}</td></tr>
-                                @endforeach
-                               </tbody>
-                     </table>
-                    @endif 
+           
+            <table class="table table-orders table-bordered table-striped table-responsive no-margin">
+              <!--   <tbody>
+                @foreach($data['personal'] as $personal)
+                 <tr><th>Date Of Birth</th>   <td>{{ $personal->dob }}</td></tr>
+                    <tr>   <th>Passport</th> <td>{{ $personal->passport }}</td></tr>
+                      <tr> <th>Adhar Card</th>  <td>{{ $personal->adharcard }}</td></tr>
+                      <tr> <th>PAN Card</th><td>{{ $personal->pancard }}</td></tr>
+                      <tr> <th>Marital Status</th> <td>{{ $personal->marital == 1 ? "Yes" : "No" }}</td></tr>
+                      <tr> <th>Willing to relocate??</th><td>{{ $personal->relocate == 1 ? "Yes" : "No" }}</td></tr>
+                  <tr><th>Flexible with shifts??</th> <td>{{ $personal->shifts == 1 ? "Yes" : "No" }}</td></tr>
+                 <tr> <th>Owning a vehicle??</th><td>{{ $personal->vehicle == 1 ? "Yes" : "No" }}</td></tr>
+                @endforeach    
+                
+                  </tbody> -->
+<thead><th>Company Name</th><th>Job Title</th><th>Designation</th><th>Experience(Years)</th><th>Location</th></tr></thead>
+<tbody>
+<tr><td>Robosoft</td><td><a href="whilo.in/pricing">Job Title must be displayed here</a></td><td>Sernior.Engineer</td><td>2</td><td>Bangalore</td></tr>
+<tr><td>Robosoft</td><td><a href="whilo.in/pricing">Job Title must be displayed here</a></td><td>Sernior.Engineer</td><td>2</td><td>Bangalore</td></tr>
+<tr><td>Robosoft</td><td><a href="whilo.in/pricing">Job Title must be displayed here</a></td><td>Sernior.Engineer</td><td>2</td><td>Bangalore</td></tr>
+</tbody>
+                </table>
+    
+            </div>
+    <div class="tab-pane" id="Shortlisted">
+                     <h4 class="col-md-4 pull-left">Shortlisted Jobs</h4>
+                     
+       
+            <table class="table table-orders table-bordered table-striped table-responsive no-margin">
+              <!--   <tbody>
+                @foreach($data['personal'] as $personal)
+                 <tr><th>Date Of Birth</th>   <td>{{ $personal->dob }}</td></tr>
+                    <tr>   <th>Passport</th> <td>{{ $personal->passport }}</td></tr>
+                      <tr> <th>Adhar Card</th>  <td>{{ $personal->adharcard }}</td></tr>
+                      <tr> <th>PAN Card</th><td>{{ $personal->pancard }}</td></tr>
+                      <tr> <th>Marital Status</th> <td>{{ $personal->marital == 1 ? "Yes" : "No" }}</td></tr>
+                      <tr> <th>Willing to relocate??</th><td>{{ $personal->relocate == 1 ? "Yes" : "No" }}</td></tr>
+                  <tr><th>Flexible with shifts??</th> <td>{{ $personal->shifts == 1 ? "Yes" : "No" }}</td></tr>
+                 <tr> <th>Owning a vehicle??</th><td>{{ $personal->vehicle == 1 ? "Yes" : "No" }}</td></tr>
+                @endforeach    
+                
+                  </tbody> -->
+<thead><th>Company Name</th><th>Job Title</th><th>Designation</th><th>Experience(Years)</th><th>Location</th><th>Apply Now</th></tr></thead>
+<tbody>
+<tr><td>Robosoft</td><td><a href="whilo.in/pricing">Job Title must be displayed here</a></td><td>Sernior.Engineer</td><td>2</td><td>Bangalore</td><td><a name="btnsearch" href="javascript:void(0)" class="btn btn-lg " title="">
+                            <span class="c-white">Apply Now</span>
+                        </a></td></tr>
+<tr><td>Robosoft</td><td><a href="whilo.in/pricing">Job Title must be displayed here</a></td><td>Sernior.Engineer</td><td>2</td><td>Bangalore</td><td><a name="btnsearch" href="javascript:void(0)" class="btn btn-lg " title="">
+                            <span class="c-white">Apply Now</span>
+                        </a></td></tr>
+<tr><td>Robosoft</td><td><a href="whilo.in/pricing">Job Title must be displayed here</a></td><td>Sernior.Engineer</td><td>2</td><td>Bangalore</td><td><a name="btnsearch" href="javascript:void(0)" class="btn btn-lg" title="">
+                            <span class="c-white">Apply Now</span>
+                        </a></td></tr>
+</tbody>
+                </table>
     
             </div>
             <div class="tab-pane" id="documents">
+<div class="row">
+    <h4 class="col-md-4 pull-left">Documents</h4>
+<div class="col-md-6 pull-right"><a name="btnsearch" href="javascript:void(0)" class="btn btn-lg  pull-right" title="" style="margin-left:1%;">
+                            <span class="c-white">Edit</span>
+                        </a>
+<a name="btnsearch" href="javascript:void(0)" class="btn btn-lg  pull-right" title="">
+                            <span class="c-white">Upload New Documents</span>
+                        </a>
+</div></div>
     <div class="row">
     <div class="col-md-6">
                      <div class="panel panel-default">
